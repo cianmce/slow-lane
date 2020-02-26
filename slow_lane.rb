@@ -4,7 +4,7 @@ require "json"
 
 set :server, :thin
 
-logger = Logger.new(STDOUT)
+logger = Logger.new($stdout)
 logger.level = Logger::DEBUG
 logger.datetime_format = "%Y-%m-%d %H:%M:%S"
 
