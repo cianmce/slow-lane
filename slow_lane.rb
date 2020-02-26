@@ -1,6 +1,12 @@
 require "sinatra"
+require "logger"
+require "json"
 
 set :server, :thin
+
+logger = Logger.new($stdout)
+logger.level = Logger::DEBUG
+logger.datetime_format = "%Y-%m-%d %H:%M:%S"
 
 before do
   headers "Server" => " "
@@ -11,7 +17,8 @@ get "/" do
 end
 
 get "/stream*" do
-  pp params
+  logger.info "params: #{params.to_json}"
+
   content = params[:ct] || params[:content_type] || "text/plain"
   content_type content
 
@@ -20,11 +27,11 @@ get "/stream*" do
   delay = params[:d] || params[:delay] || 0.4
   delay = delay.to_f
 
+
   stream do |out|
     cycles.times do
       text = params[:t] || params[:text] || SecureRandom.hex(32)
       out << "#{text}\n"
-      puts "sleeping for #{delay}"
       sleep delay if delay > 0
     end
   end
