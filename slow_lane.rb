@@ -30,7 +30,7 @@ get '/stream*' do
       text = params[:text] || SecureRandom.hex(32)
       out << "#{text}\n"
       puts "sleeping for #{delay}"
-      sleep delay
+      sleep delay if delay > 0
     end
   end
 end
