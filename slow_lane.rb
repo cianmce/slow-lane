@@ -4,11 +4,6 @@ require "json"
 
 set :server, :thin
 
-logger = Logger.new(STDOUT)
-logger.level = Logger::DEBUG
-logger.datetime_format = "%Y-%m-%d %H:%M:%S"
-logger.sync = true
-
 before do
   headers "Server" => " "
 end
@@ -18,7 +13,7 @@ get "/" do
 end
 
 get "/stream*" do
-  logger.info "params: #{params.to_json}"
+  puts "params: #{params.to_json}"
 
   content = params[:ct] || params[:content_type] || "text/plain"
   content_type content
