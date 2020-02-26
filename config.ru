@@ -1,2 +1,2 @@
 require "./slow_lane"
-run SlowLane
+run Sinatra::Application
