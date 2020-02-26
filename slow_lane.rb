@@ -23,7 +23,6 @@ get "/stream*" do
   delay = params[:d] || params[:delay] || 0.4
   delay = delay.to_f
 
-
   stream do |out|
     cycles.times do
       text = params[:t] || params[:text] || SecureRandom.hex(32)
