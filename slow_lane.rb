@@ -7,6 +7,7 @@ set :server, :thin
 logger = Logger.new(STDOUT)
 logger.level = Logger::DEBUG
 logger.datetime_format = "%Y-%m-%d %H:%M:%S"
+log_file.sync = true
 
 before do
   headers "Server" => " "
