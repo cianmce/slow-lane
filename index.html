@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slow Lane</title>
+</head>
+<body>
+  <h1>Slow Lane</h1>
+  URL Params: /stream?...
+  <table>
+    <tr>
+      <th>Param</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        "ct" or "content_type"
+      </td>
+      <td>
+        text/plain
+      </td>
+      <td>
+        Sets the response HTTP header
+      </td>
+    </tr>
+    <tr>
+      <td>
+        "c" or "count"
+      </td>
+      <td>
+        10
+      </td>
+      <td>
+        Sets number of lines to be returned
+      </td>
+    </tr>
+    <tr>
+      <td>
+        "d" or "delay"
+      </td>
+      <td>
+        0.4
+      </td>
+      <td>
+        Sets the delay between each line
+      </td>
+    </tr>
+    <tr>
+      <td>
+        "t" or "text"
+      </td>
+      <td>
+        Random 64 hex characters
+      </td>
+      <td>
+        Sets the text to be returned
+      </td>
+    </tr>
+  </table>
+  <br>
+  Sample URL: <a href="/stream.png?c=20&d=0.2&text=hello,%20world!&ct=text/html">/stream.png?c=20&d=0.2&text=hello,%20world!&ct=text/html</a>
+</body>
+</html>

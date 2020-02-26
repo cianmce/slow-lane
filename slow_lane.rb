@@ -7,7 +7,7 @@ before do
 end
 
 get "/" do
-  "Hello world!"
+  send_file "index.html"
 end
 
 get "/stream*" do
