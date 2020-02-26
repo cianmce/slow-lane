@@ -1,21 +1,16 @@
-require 'sinatra'
-require 'pry'
+require "sinatra"
 
-# port = ARGV[0].nil? ? 3001 : ARGV[0]
-
-# set :port, port
-# set :bind, '0.0.0.0'
 set :server, :thin
 
 before do
-  headers 'Server' => " "
+  headers "Server" => " "
 end
 
 get "/" do
   "Hello world!"
 end
 
-get '/stream*' do
+get "/stream*" do
   pp params
   content = params[:ct] || params[:content_type] || "text/plain"
   content_type content
