@@ -1,6 +1,7 @@
 # slow-lane
+Control speed, content type and data length for streaming data
 
-# Live demo
+## Live demo
 https://slow-lane.herokuapp.com/stream.png?c=20&d=0.2
 
 
